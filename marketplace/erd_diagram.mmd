@@ -1,0 +1,119 @@
+erDiagram
+    ZONES {
+        int id PK
+        string name
+        string zip5
+        bool is_gateway
+        bool is_pickup
+        bool is_dropoff
+        bool is_storage
+        float geofence_center_lat
+        float geofence_center_lng
+        float geofence_radius_m
+    }
+    LANES {
+        int id PK
+        int origin_zone_id FK
+        int destination_zone_id FK
+    }
+    TRIPS {
+        int id PK
+        int lane_id FK
+        datetime start_at
+        datetime end_at
+        int qty_total
+        int qty_available
+    }
+    STAY_WINDOWS {
+        int id PK
+        int storage_zone_id FK
+        datetime start_at
+        datetime end_at
+        int qty_total
+        int qty_available
+    }
+    CAPACITY_TOKENS {
+        int id PK
+        string context_type
+        int trip_id FK
+        int stay_window_id FK
+        int qty_total
+        int qty_available
+        string status
+        int price_cents
+        string currency
+    }
+    ORGS {
+        int id PK
+        string name
+    }
+    BOOKINGS {
+        int id PK
+        int buyer_org_id FK
+        int supplier_org_id FK
+        string status
+    }
+    ALLOCATIONS {
+        int id PK
+        int booking_id FK
+        int capacity_token_id FK
+        int qty_reserved
+        int leg_sequence
+        int holder_org_id FK
+        int parent_allocation_id FK
+        string status
+    }
+    HANDLING_UNIT_GROUPS {
+        int id PK
+        int booking_id FK
+        int group_number
+        int leg_sequence
+        int parent_group_id FK
+        string status
+    }
+    HANDLING_UNITS {
+        int id PK
+        int handling_unit_group_id FK
+        string status
+        int last_seen_zone_id FK
+        datetime last_seen_at_utc
+    }
+    SCAN_EVENT_TYPES {
+        string code PK
+        string description
+    }
+    SCAN_EVENTS {
+        int id PK
+        int handling_unit_id FK
+        string event_type_code FK
+        datetime occurred_at_utc
+        int user_id
+        int zone_id FK
+        float lat
+        float lng
+    }
+    EVIDENCE_ASSETS {
+        int id PK
+        int scan_event_id FK
+        string kind
+        string url
+    }
+    ZONES ||--o{ LANES : "origin"
+    ZONES ||--o{ LANES : "destination"
+    LANES ||--o{ TRIPS : "lane"
+    ZONES ||--o{ STAY_WINDOWS : "storage_zone"
+    TRIPS ||--o{ CAPACITY_TOKENS : "trip"
+    STAY_WINDOWS ||--o{ CAPACITY_TOKENS : "stay_window"
+    ORGS ||--o{ BOOKINGS : "buyer"
+    ORGS ||--o{ BOOKINGS : "supplier"
+    BOOKINGS ||--o{ ALLOCATIONS : "booking"
+    CAPACITY_TOKENS ||--o{ ALLOCATIONS : "capacity"
+    ORGS ||--o{ ALLOCATIONS : "holder"
+    ALLOCATIONS ||--o{ ALLOCATIONS : "parent"
+    BOOKINGS ||--o{ HANDLING_UNIT_GROUPS : "booking"
+    HANDLING_UNIT_GROUPS ||--o{ HANDLING_UNITS : "group"
+    ZONES ||--o{ HANDLING_UNITS : "last_seen_zone"
+    HANDLING_UNITS ||--o{ SCAN_EVENTS : "handling_unit"
+    SCAN_EVENT_TYPES ||--o{ SCAN_EVENTS : "event_type"
+    ZONES ||--o{ SCAN_EVENTS : "zone"
+    SCAN_EVENTS ||--o{ EVIDENCE_ASSETS : "scan_event"
