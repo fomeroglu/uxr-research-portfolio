@@ -24,9 +24,9 @@ Contextual field inquiry and behavioral analysis located and validated the root 
 ---
 
 ### [Smart Containers](./smart-containers/)
-**Field research on a physical + digital product — 1,000+ units deployed**
+**Field research on a physical + digital product — 3,000+ units deployed**
 
-Field observation reframed an early deployment failure from a materials problem into a usage problem, producing a severity-ranked failure taxonomy that turned directly into a prioritized design roadmap. A parallel tracker-evaluation and telemetry effort supported the digital layer.
+Field research on a reusable IoT container across live carrier operations: on-site observation, operator interviews, and telemetry pattern analysis from raw device data. Insights drove iterative physical design decisions across four production batches. 3,000+ units deployed.
 
 **Artifacts:** Container design iteration · Tracker pilot evaluation · Telemetry pattern analysis · Integration validation
 
