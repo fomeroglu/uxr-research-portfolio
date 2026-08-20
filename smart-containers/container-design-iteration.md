@@ -1,73 +1,79 @@
-# Container Design Iteration — Field Validation Program
+# Container Design Iteration — From Validated Concepts to Field Improvements
 
-**Product:** Reusable trackable container
-**Research arc:** Controlled field pilot → field failure analysis → iterative design response → validated production
-**Outcome:** 1,000+ units deployed of the final validated version
+**Research arc:** Generative discovery → concept validation → field pilot → design improvements → scaled deployment
+**Outcome:** 3,000+ units carry the research-driven design
 
 ---
 
 ## Research question
 
-How does a container designed for logistics actually hold up under real operational conditions — and what does field failure data tell us about the next design?
-
-The underlying principle: a physical product with this many operational variables cannot be validated in a lab. The research required deployment into live operations, observation of what failed and why, and design iteration triggered by field evidence rather than engineering assumptions.
+Could a reusable container cut cost, improve safety, and increase operational efficiency — and would it survive real logistics conditions? The design process was research-led from the start: concepts came from field discovery, were validated before engineering built anything, then improved through live field research once deployed.
 
 ---
 
-## Container design context
+## From validated concepts to the built design
 
-The container was designed as a physical interface between different package-handling systems — sortation equipment, trailers, forklifts, robots, and dock employees — without requiring infrastructure changes at any facility. It was forkable from multiple sides, allowed dock-employee access for loading and unloading, and carried a higher load factor than standard alternatives.
+Four concepts emerged from discovery and competitive analysis — each addressing a gap the market wasn't serving. All four were validated with operators and decision-makers before any engineering work began.
 
----
+| Validated concept | What it became in the design |
+|---|---|
+| Metal build — durability gap in the market | Durable metal construction that survives constant circulation |
+| Tall form — poor truck utilization | Tall, stable form that holds its shape when stacked and fits more per truck |
+| Top-section access — slow cross-dock | Top-section access for unloading and reloading mid-route |
+| Built-in tracking — no asset visibility | Integrated tracker streaming location and status |
 
-## Iteration 1 — Controlled field pilot
-
-An initial batch deployed to early-adopter customers across live carrier operations. The research objective was not to achieve scale but to observe how the container performed under actual logistics conditions before committing to full production.
-
-**Field finding:** A significant share of the pilot fleet showed damage within weeks. Rather than treat these as quality incidents, each failure was inspected and classified by type, severity, and likely cause — turning the returning fleet into research data.
-
-**Root-cause finding:** The damage pointed at handling, not materials. To pack trailers to capacity, operators compress containers together during loading — standard practice, not misuse — and the original design had not anticipated that force pattern. This single field observation became the primary driver of the structural redesign.
-
-**Why starting with a controlled pilot was the right research decision:** the cost of discovering design gaps in a small field pilot is far lower than discovering them at full scale. The failure data from this batch was the research input that made every subsequent design decision defensible.
+This is the design handed to engineering for the first build. Not assumptions — validated research findings translated into a physical brief.
 
 ---
 
-## Iterations 2–3 — Evidence-driven redesign
+## Field pilot — learning before scaling
 
-Each subsequent batch was triggered by cumulative field failure data, not a fixed schedule. Damaged units were refurbished with improvements first — validating each change under live conditions before it was committed to a larger batch — and then folded into a broader structural redesign.
+A small first batch deployed with early adopters in live closed-loop operations. The pilot was designed not just to see if the design worked, but to learn what to fix before committing to scale.
 
-The discipline throughout: no design change without a corresponding field finding. Every change traced back to a documented failure mode, so the redesign was targeted at what actually failed rather than a blanket "add more everywhere" response. This is what kept the redesign within its cost and assembly constraints.
-
-Tracker placement guidelines — informed by signal patterns identified in the telemetry analysis — were incorporated into the physical specification here, an early instance of the design-to-telemetry feedback loop below.
-
----
-
-## Iteration 4 — Validated production design
-
-The final design incorporated all structural learnings and deployed at scale. It also incorporated two operator usability findings surfaced through field research:
-
-**Tracker installation.** Incorrect tracker installation in early batches degraded battery and signal performance. Field observation traced this to label-tape buildup obscuring placement guidance, which made correct installation hard for facility operators. Design response: a pre-installed tracker holder that constrains orientation at assembly, removing the ambiguity from the operator's task.
-
-**Label handling.** Containers accumulate tape from shipment labels over operational cycles, which complicated refurbishment and obscured tracker placement. This drove exploration of a built-in label-handling solution to remove the dependency on tape entirely.
+Four feedback channels ran in parallel and were cross-checked against each other:
+- **Field observation** — how operators loaded, moved, and handled units in live operations
+- **Operator and site interviews** — the reasoning behind the behavior, from people doing the work
+- **Support-call analysis** — unprompted friction operators called in to report
+- **Telemetry data** — movement and cycle data cross-referenced against field findings
 
 ---
 
-## Design-to-telemetry feedback loop
+## Field findings
 
-A distinctive aspect of this program was the bidirectional feedback between physical design and telemetry:
+**The mechanism was handling, not material.** To fill trailers to capacity, operators pushed containers together hard — a systematic, incentivized behavior, not careless handling. The original design had not anticipated that force pattern. Field observation established the human cause; engineering established what that did to the structure. The damage clustered exactly where the observed handling predicted.
 
-**Telemetry → physical design.** Signal patterns identified in the telemetry analysis led to tracker placement and orientation guidance built into later physical specifications.
+Three specific findings stood out:
 
-**Physical design → telemetry quality.** Each design iteration improved the conditions under which the tracker operated, which produced cleaner telemetry, which in turn enabled more accurate behavioral analysis.
-
-This loop — field data informing physical design, physical design improving field data quality — was a meaningful differentiator from treating the physical and digital layers as separate concerns.
-
----
-
-## Research principle demonstrated
-
-The gap between intended use and actual use was the primary driver of design iteration across every batch. Operators were not misusing the containers — they were doing their jobs under the conditions they actually work in. Compressing containers during loading is standard practice; tape accumulation is an expected consequence of normal operation. Each design change was a response to field observation of real operator behavior, not an attempt to correct that behavior.
+- **Nets bulged and snagged** — the net panel, which operators touch every cycle, bore repeated handling load and showed wear first
+- **Damage clustered at specific stress points** — not distributed across the whole shell, which meant reinforcement could be targeted rather than blanket
+- **Tracker placement was exposed** — trackers sat where handling stress and install friction were highest
 
 ---
 
-*Specific facility names, carrier partner names, exact figures, and hardware specifications have been genericized or excluded. Full detail available in conversation.*
+## Design improvements
+
+Each field finding drove a specific design change — the research-to-design loop made concrete:
+
+| Field finding | Design change |
+|---|---|
+| Nets bulged and snagged in handling | Net redesign — reshaped for usability under repeated handling load |
+| Damage clustered at specific stress points | Structural reinforcement at those points, not the whole shell |
+| Trackers were vulnerable and slow to install | Tracker placement optimized for durability and quick install |
+| Labels and trackers had no designated home | Label pouches and preinstalled tracker holders |
+
+---
+
+## The scaling arc
+
+| Stage | What happened |
+|---|---|
+| Small first batch | Deployed with early adopters; field research ran in parallel |
+| Redesign | Field findings folded into the next production batch |
+| Validate | Improvements confirmed with the next batch of adopters |
+| Scale | Fleet grew once satisfaction and performance held up |
+
+3,000+ units carry the research-driven design. Each stage was gated on real adopter feedback before the next batch was committed.
+
+---
+
+*Participant counts, economic figures, facility names, and carrier details have been genericized or excluded. Full detail available in conversation.*
